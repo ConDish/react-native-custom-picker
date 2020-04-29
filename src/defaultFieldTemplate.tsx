@@ -9,7 +9,8 @@ const defaultFieldTemplate: FieldTemplateFunction = ({
   clear,
   containerStyle,
   textStyle,
-  clearImage
+  clearImage,
+  validate
 }) => (
   <View
     style={[
@@ -25,7 +26,7 @@ const defaultFieldTemplate: FieldTemplateFunction = ({
       containerStyle
     ]}
   >
-    <Text style={textStyle}>
+    <Text style={textStyle, { fontSize: (validate) ? 20: 11, alignItems: 'center', color: '#999999'}}>
       {(selectedItem && getLabel(selectedItem)) || defaultText}
     </Text>
     {selectedItem && (
@@ -41,8 +42,7 @@ const defaultFieldTemplate: FieldTemplateFunction = ({
           <Image
             style={{ width: 16, height: 16 }}
             source={{
-              uri:
-                'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAdVBMVEUAAAA0SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV40SV4ZONdZAAAAJnRSTlMAAQIDBAUGBwgRFRYZGiEjQ3l7hYaqtLm8vsDFx87a4uvv8fP1+bbY9ZEAAAB8SURBVBhXXY5LFoJAAMOCIP4VBRXEv5j7H9HFDOizu2TRFljedgCQHeocWHVaAWStXnKyl2oVWI+kd1XLvFV1D7Ng3qrWKYMZ+MdEhk3gbhw59KvlH0eTnf2mgiRwvQ7NW6aqNmncukKhnvo/zzlQ2PR/HgsAJkncH6XwAcr0FUY5BVeFAAAAAElFTkSuQmCC'
+              uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAArCAYAAAA65tviAAAACXBIWXMAAAsSAAALEgHS3X78AAACEklEQVRogdWZP07DMBSHf4SFlbEbnABuQI+A1L3iCLkB6Q3akY1mj0RvQG/Qih3RKSs9QZGrF5TIjv882038TSVWSz89/57N4+p0OkEwmc1zAM9Iix2AZV2VP2eRyWz+CeApMYmGI4DH67ev7ymAV2k5HW4A3GYApglLNNxltM9S5z8jQuYhYZn7jF7k0lI6rETXOovUVSm61jpBCdGxCvEiaz3MaSEl8roqfzsi9KBISGJbV+V780O7IkJmCeAgvWWcdHKdKb7ii/RkfKzrquwcG5IIBX8zYomjqstKIsSYg180AW+jFBF9WdwqpYXh2VOOJZQiJFOMMPjSlmroFTG9cQDWlF8lWpG6Kj9Ev5YWLs/RdMZpRYgxtOMl5bYXowh9wEJauBwHyqsWm4qAOthQwbfaEVYiA97DNrqAt7GtCOiCdungW3dNaxHXDw7AwhRwtghd1FbSQngOrjcL14qAshL7Hpar7lM6nEXoF8TcYls6iJ3gVKQJ/l5aCAPrAGaJEDGqsnIJeBu2SITJi/E+pcOnIgj8B5hzwNt4iQQ88TsTEQ6+FQk1efHOm7cI4XPVlyYiHIKIeExelBMRDqEqAmbwlRMRDsFEGJOX3okIh5AVcZ28BD1Qg4oQNl9QOxHhEFzEYvLidYL3EaMiMLRj40SEQxQRzeRlbzMR4RCrIk3whYzYZqIBiAtmnH+FA/gDcxbTqRL0HeUAAAAASUVORK5CYII='
             }}
           />
         )}
