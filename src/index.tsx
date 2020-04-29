@@ -64,14 +64,16 @@ export class CustomPicker extends React.PureComponent<
       backdropStyle,
       modalStyle,
       refreshControl,
-      scrollViewProps
+      scrollViewProps,
+      validate
     } = this.props
 
     const actions: CustomPickerActions = {
       getLabel: this.props.getLabel || this.getLabel,
       clear: this.clear,
       open: this.showOptions,
-      close: this.hideOptions
+      close: this.hideOptions,
+      validate
     }
 
     const ft = fieldTemplate as FieldTemplateFunction
