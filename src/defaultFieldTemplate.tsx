@@ -25,7 +25,7 @@ const defaultFieldTemplate: FieldTemplateFunction = ({
       containerStyle
     ]}
   >
-    <Text style={textStyle}>
+    <Text style={textStyle, { fontSize: (validate) ? 20: 11, alignItems: 'center', color: '#999999'}>
       {(selectedItem && getLabel(selectedItem)) || defaultText}
     </Text>
     {selectedItem && (
